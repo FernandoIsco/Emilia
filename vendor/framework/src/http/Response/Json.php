@@ -49,7 +49,7 @@ class Json extends Response
      * @return string
      * @throws \Exception
      */
-    protected function getData()
+    public function getData()
     {
         $data = json_encode($this->data, $this->options['json_encode_param']);
 
