@@ -804,7 +804,9 @@ class Request
         if (!function_exists($filter)) return false;
 
         if (is_array($value)) {
-            array_walk_recursive($value, $filter);
+            foreach ($value as $val) {
+                $this->filterValue($val, $filter);
+            }
         } else {
             $value = $filter($value);
         }
